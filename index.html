@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Q&A Dashboard</title>
+  <style>
+    :root {
+      --primary: #6c5ce7;
+      --background: #f0f2f5;
+      --card-bg: #fff;
+      --text: #333;
+      --shadow: rgba(0, 0, 0, 0.1);
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: var(--background);
+      padding: 2rem;
+    }
+
+    h1 {
+      text-align: center;
+      color: var(--primary);
+      margin-bottom: 2rem;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: var(--card-bg);
+      margin-bottom: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px var(--shadow);
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: scale(1.01);
+    }
+
+    .question {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 1.5rem;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: var(--text);
+    }
+
+    .question:hover {
+      background: #f5f5f5;
+    }
+
+    .icon {
+      transition: transform 0.3s;
+    }
+
+    .card.open .icon {
+      transform: rotate(90deg);
+    }
+
+    .answer {
+      max-height: 0;
+      overflow: hidden;
+      background: #fafafa;
+      transition: max-height 0.4s ease, padding 0.3s;
+      padding: 0 1.5rem;
+    }
+
+    .card.open .answer {
+      padding: 1rem 1.5rem;
+      max-height: 300px;
+    }
+
+    @media (max-width: 600px) {
+      .question {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>📋 Business Q&A Dashboard</h1>
+  <div class="container">
+
+    <div class="card">
+      <div class="question" onclick="toggleCard(this)">
+        1. What is the main product our customers love?
+        <span class="icon">▶</span>
+      </div>
+      <div class="answer">
+        Our customers particularly love our deluxe manicure set, known for its high quality and long-lasting results.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="question" onclick="toggleCard(this)">
+        2. What are the average ratings per branch?
+        <span class="icon">▶</span>
+      </div>
+      <div class="answer">
+        Tel Aviv: 4.5 ★, Haifa: 4.2 ★, Jerusalem: 4.6 ★ based on customer reviews this quarter.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="question" onclick="toggleCard(this)">
+        3. Which nail colors are popular in each season?
+        <span class="icon">▶</span>
+      </div>
+      <div class="answer">
+        Spring: Lavender, Mint<br>
+        Summer: Coral, Turquoise<br>
+        Autumn: Burgundy, Olive<br>
+        Winter: Navy, Plum
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="question" onclick="toggleCard(this)">
+        4. Which branch needs inventory restocking?
+        <span class="icon">▶</span>
+      </div>
+      <div class="answer">
+        The Haifa branch is low on polish removers and base coats, requiring urgent restock.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="question" onclick="toggleCard(this)">
+        5. What percentage of customers return?
+        <span class="icon">▶</span>
+      </div>
+      <div class="answer">
+        Around 65% of customers return within 3 months for another appointment.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="question" onclick="toggleCard(this)">
+        6. How many employees are active in each location?
+        <span class="icon">▶</span>
+      </div>
+      <div class="answer">
+        Tel Aviv: 10, Haifa: 8, Jerusalem: 9 active employees this month.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="question" onclick="toggleCard(this)">
+        7. What are the weekly sales trends?
+        <span class="icon">▶</span>
+      </div>
+      <div class="answer">
+        Peak sales happen on Friday–Saturday; weekdays show lower activity between 1–4 PM.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="question" onclick="toggleCard(this)">
+        8. Are there any customer complaints this month?
+        <span class="icon">▶</span>
+      </div>
+      <div class="answer">
+        2 complaints were registered about long waiting times at the Tel Aviv branch.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="question" onclick="toggleCard(this)">
+        9. What are the current appointment no-show rates?
+        <span class="icon">▶</span>
+      </div>
+      <div class="answer">
+        No-show rate: 12%, mostly on weekday mornings. Text reminders are being tested.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="question" onclick="toggleCard(this)">
+        10. How is the revenue distributed by service type?
+        <span class="icon">▶</span>
+      </div>
+      <div class="answer">
+        Manicure: 40%, Pedicure: 30%, Nail Art: 20%, Others: 10%.
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleCard(elem) {
+      const card = elem.parentElement;
+      card.classList.toggle("open");
+    }
+  </script>
+</body>
+</html>
